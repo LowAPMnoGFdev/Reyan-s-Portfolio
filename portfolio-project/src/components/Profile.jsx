@@ -120,9 +120,9 @@ const Profile = () => {
   return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-8 shadow-lg w-full opacity-0" style={{ 
         animation: 'fadeIn 0.8s ease-out forwards',
         animationDelay: '0.3s'
-      }}>
-      <div className="flex flex-row items-start gap-8 hover:scale-[1.01] transition-transform duration-300"><img 
-          src="/src/assets/Profilepic.jpg" 
+      }}>      <div className="flex flex-row items-start gap-8 hover:scale-[1.01] transition-transform duration-300">
+        <img 
+          src={import.meta.env.BASE_URL + 'profile-pic.jpg'} 
           alt="Profile Picture" 
           className="w-65 h-65 rounded-lg object-cover shadow-md"
         />
