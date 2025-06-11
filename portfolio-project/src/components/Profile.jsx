@@ -60,7 +60,7 @@ const ProfileInfo = () => {
         Davao, Philippines
       </p>
       <p className="text-lg text-gray-600 font-medium">
-        Computer Science and Shopify Store Builder
+        Computer Science and Freelancer
       </p>
     </>
   )
