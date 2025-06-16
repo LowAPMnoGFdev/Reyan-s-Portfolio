@@ -160,7 +160,7 @@ html {
 
 .glow-container:hover {
   box-shadow: 0 0 25px rgba(0, 0, 128, 0.7) !important;
-  outline: 3px solid rgb(0, 0, 128) !important;
+  outline: 3px solid rgb(76, 1, 173) !important;
   outline-offset: 3px !important;
   transform: translateY(-2px) !important;
   z-index: 10 !important;
@@ -201,6 +201,7 @@ html {
   }
   100% {
     background-position: 0% 50%;
+
   }
 }
 
