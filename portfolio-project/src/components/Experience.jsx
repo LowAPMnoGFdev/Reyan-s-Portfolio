@@ -22,7 +22,7 @@ const Experience = () => {
     },
   ]
 
-  return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-lg w-full h-full opacity-0" style={{ 
+  return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-5 shadow-lg w-full h-full opacity-0 glow-container" style={{ 
         animation: 'fadeIn 0.8s ease-out forwards',
         animationDelay: '0.9s'
       }}>
@@ -31,7 +31,7 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="relative pl-4 pb-4 last:pb-0 opacity-0 hover:scale-[1.02] hover:shadow-md rounded p-2 cursor-pointer" 
+            className="relative pl-4 pb-4 last:pb-0 opacity-0 hover:scale-[1.02] hover:shadow-md rounded p-2 cursor-pointer glow-container" 
             style={{ 
               animation: 'fadeIn 0.5s ease-out forwards',
               animationDelay: `${1.2 + index * 0.15}s`,

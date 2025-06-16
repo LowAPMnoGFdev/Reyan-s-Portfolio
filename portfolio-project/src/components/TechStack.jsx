@@ -1,19 +1,39 @@
 import React from 'react'
 
+const techColors = {
+  // Frontend
+  HTML: 'bg-orange-500 text-white',
+  CSS: 'bg-blue-500 text-white',
+  TAILWIND: 'bg-cyan-400 text-white',
+  REACT: 'bg-blue-400 text-white',
+  BOOTSTRAP: 'bg-purple-600 text-white',
+  
+  // Backend
+  PHP: 'bg-indigo-600 text-white',
+  DJANGO: 'bg-green-600 text-white',
+  
+  // Database
+  MYSQL: 'bg-blue-700 text-white',
+  POSTGRESQL: 'bg-blue-600 text-white',
+  FIREBASE: 'bg-yellow-500 text-white',
+  
+  // Tools
+  VSCODE: 'bg-blue-500 text-white',
+  CANVA: 'bg-purple-500 text-white',
+  GITHUB: 'bg-gray-800 text-white',
+  GIT: 'bg-red-500 text-white',
+};
+
 const TechStack = () => {
-  return (
-    <div className="bg-white rounded-lg p-6 shadow-lg opacity-0" style={{ 
+  return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-lg opacity-0 glow-container" style={{
       animation: 'fadeIn 0.8s ease-out forwards',
-      animationDelay: '1.6s'
+      animationDelay: '1.2s'
     }}>
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2 opacity-0" style={{
-        animation: 'fadeIn 0.5s ease-out forwards',
-        animationDelay: '1.8s'
-      }}>
+      <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">
         Tech Stack
       </h2>
-      <div className="space-y-4">
-        <div className="opacity-0" style={{
+      <div className="grid gap-6">
+        <div className="opacity-0 glow-container p-4 rounded-lg" style={{
           animation: 'fadeIn 0.5s ease-out forwards',
           animationDelay: '2.0s'
         }}>
@@ -22,7 +42,7 @@ const TechStack = () => {
             {['HTML', 'CSS', 'TAILWIND', 'REACT', 'BOOTSTRAP'].map((tech, index) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700"
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 ${techColors[tech]}`}
               >
                 {tech}
               </span>
@@ -30,7 +50,7 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="opacity-0" style={{
+        <div className="opacity-0 glow-container p-4 rounded-lg" style={{
           animation: 'fadeIn 0.5s ease-out forwards',
           animationDelay: '2.2s'
         }}>
@@ -39,7 +59,7 @@ const TechStack = () => {
             {['PHP', 'DJANGO'].map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700"
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 ${techColors[tech]}`}
               >
                 {tech}
               </span>
@@ -47,7 +67,7 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="opacity-0" style={{
+        <div className="opacity-0 glow-container p-4 rounded-lg" style={{
           animation: 'fadeIn 0.5s ease-out forwards',
           animationDelay: '2.4s'
         }}>
@@ -56,7 +76,7 @@ const TechStack = () => {
             {['MYSQL', 'POSTGRESQL', 'FIREBASE'].map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700"
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 ${techColors[tech]}`}
               >
                 {tech}
               </span>
@@ -64,7 +84,7 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="opacity-0" style={{
+        <div className="opacity-0 glow-container p-4 rounded-lg" style={{
           animation: 'fadeIn 0.5s ease-out forwards',
           animationDelay: '2.6s'
         }}>
@@ -73,7 +93,7 @@ const TechStack = () => {
             {['VSCODE', 'CANVA', 'GITHUB', 'GIT'].map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700"
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 ${techColors[tech]}`}
               >
                 {tech}
               </span>

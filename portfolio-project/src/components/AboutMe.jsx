@@ -1,6 +1,6 @@
 const AboutMe = () => {
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-lg w-full opacity-0" style={{ 
+    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 shadow-lg w-full opacity-0 glow-container" style={{ 
       animation: 'fadeIn 0.8s ease-out forwards',
       animationDelay: '0.6s'
     }}>

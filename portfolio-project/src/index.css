@@ -9,6 +9,7 @@ body {
   font-family: 'Inter', sans-serif; /* Optional: set a default font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Animated gradient styles */
@@ -19,6 +20,25 @@ body {
   min-height: 100vh;
 }
 
+/* Responsive typography */
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Animations */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -45,25 +65,43 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-/* Modern typography styles */
-h1 {
-  font-weight: 700;
-  letter-spacing: -0.025em;
+/* Responsive containers */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
 }
 
-h2 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding: 1.5rem;
+  }
 }
 
-h3 {
-  font-weight: 500;
-  letter-spacing: -0.025em;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 2rem;
+  }
 }
 
-p {
-  font-weight: 400;
-  line-height: 1.7;
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 /* New animation keyframes */
@@ -112,6 +150,58 @@ p {
   opacity: 0;
   animation: containerAppear 1s ease-out forwards;
   animation-delay: 0.3s;
+}
+
+/* Glowing container effect */
+.glow-container {
+  transition: all 0.3s ease-in-out !important;
+  position: relative !important;
+}
+
+.glow-container:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 128, 0.7) !important;
+  outline: 3px solid rgb(0, 0, 128) !important;
+  outline-offset: 3px !important;
+  transform: translateY(-2px) !important;
+  z-index: 10 !important;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 25px rgba(0, 0, 128, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 0, 128, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 0, 128, 0.7);
+  }
+}
+
+/* Button glow effect */
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+  }
+}
+
+/* Gradient slide animation */
+@keyframes gradientSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* You can keep other styles or components as per your design */

@@ -1,8 +1,14 @@
 import React from 'react'
 
+const techColors = {
+  'HTML/CSS': 'bg-gradient-to-r from-orange-500 to-blue-500 text-white',
+  'JavaScript': 'bg-yellow-400 text-white',
+  'Python': 'bg-blue-500 text-white',
+  'Django': 'bg-green-600 text-white'
+};
+
 const Projects = () => {
-  return (
-    <div className="bg-gradient-to-br from-white via-gray-50 to-white rounded-lg p-6 shadow-lg opacity-0" style={{ 
+  return (    <div className="bg-gradient-to-br from-white via-gray-50 to-white rounded-lg p-6 shadow-lg opacity-0 glow-container" style={{ 
       animation: 'fadeIn 0.6s ease-out forwards',
       animationDelay: '0.8s'
     }}>
@@ -13,33 +19,39 @@ const Projects = () => {
         Projects
       </h2>
       <div className="grid gap-6">
-        {/* First Project */}
-        <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 rounded-lg opacity-0 hover:shadow-2xl hover:bg-gradient-to-r hover:from-gray-100 hover:via-white hover:to-gray-100 transform hover:-translate-y-1 transition-all duration-300" style={{
+        {/* First Project */}        <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 rounded-lg opacity-0 hover:shadow-2xl hover:bg-gradient-to-r hover:from-gray-100 hover:via-white hover:to-gray-100 transform hover:-translate-y-1 transition-all duration-300 glow-container" style={{
           animation: 'fadeIn 0.4s ease-out forwards',
           animationDelay: '1.2s'
         }}>
           <h3 className="text-xl font-semibold text-gray-700">Payroll System</h3>
           <p className="text-gray-600 mt-2">A secure, efficient payroll solution designed to streamline salary processing, tax calculations, and employee record-keeping.</p>
           <div className="flex flex-wrap gap-2 mt-4">
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">HTML/CSS</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">JavaScript</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">Python</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">Django</span>
+            {['HTML/CSS', 'JavaScript', 'Python', 'Django'].map((tech) => (
+              <span
+                key={tech}
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 shadow-sm ${techColors[tech]}`}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
 
-        {/* Second Project */}
-        <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 rounded-lg opacity-0 hover:shadow-2xl hover:bg-gradient-to-r hover:from-gray-100 hover:via-white hover:to-gray-100 transform hover:-translate-y-1 transition-all duration-300" style={{
+        {/* Second Project */}        <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 rounded-lg opacity-0 hover:shadow-2xl hover:bg-gradient-to-r hover:from-gray-100 hover:via-white hover:to-gray-100 transform hover:-translate-y-1 transition-all duration-300 glow-container" style={{
           animation: 'fadeIn 0.4s ease-out forwards',
           animationDelay: '1.4s'
         }}>
           <h3 className="text-xl font-semibold text-gray-700">3 in 1 System for International organization</h3>
           <p className="text-gray-600 mt-2">A secure, efficient payroll solution designed to streamline salary processing, tax calculations, and employee record-keeping.</p>
           <div className="flex flex-wrap gap-2 mt-4">
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">HTML/CSS</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">JavaScript</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">Python</span>
-            <span className="px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">Django</span>
+            {['HTML/CSS', 'JavaScript', 'Python', 'Django'].map((tech) => (
+              <span
+                key={tech}
+                className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 shadow-sm ${techColors[tech]}`}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </div>

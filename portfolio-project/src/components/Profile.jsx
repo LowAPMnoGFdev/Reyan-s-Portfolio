@@ -52,14 +52,14 @@ const ProfileInfo = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-2">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-2">
         {displayText}
         {!isTypingDone && <span className="animate-blink">|</span>}
       </h1>
-      <p className="text-lg text-gray-600 mb-1">
+      <p className="text-base sm:text-lg text-gray-600 mb-1">
         Davao, Philippines
       </p>
-      <p className="text-lg text-gray-600 font-medium">
+      <p className="text-base sm:text-lg text-gray-600 font-medium">
         Computer Science and Freelancer
       </p>
     </>
@@ -89,49 +89,64 @@ const SocialLinks = () => {
   ]
 
   return (
-    <div className="flex gap-4">
-      {socialLinks.map((link, index) => (
-        <a 
-          key={index}
-          href={link.href}          className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 hover:bg-blue-950 opacity-0 transform hover:scale-110 hover:rotate-6 hover:shadow-lg" 
-          style={{
-            animation: 'fadeIn 0.5s ease-out forwards',
-            animationDelay: `${0.8 + index * 0.1}s`,
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            className="w-5 h-5 text-white" 
-            fill="currentColor"
-            viewBox="0 0 24 24" 
-            aria-hidden="true"
+    <div className="flex justify-center sm:justify-start gap-4 mb-4">
+      <div className="inline-flex gap-4">
+        {socialLinks.map((link, index) => (
+          <a 
+            key={index}
+            href={link.href}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-transparent border-2 border-slate-600 hover:border-blue-500 opacity-0 transform hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] relative overflow-hidden group transition-all duration-300" 
+            style={{
+              animation: 'fadeIn 0.5s ease-out forwards',
+              animationDelay: `${0.8 + index * 0.1}s`,
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {link.icon}
-          </svg>
-        </a>
-      ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out rounded-full"/>
+            <svg
+              className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors duration-300 relative z-10" 
+              fill="currentColor"
+              viewBox="0 0 24 24" 
+              aria-hidden="true"
+            >
+              {link.icon}
+            </svg>
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
 
 const Profile = () => {
-  return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-8 shadow-lg w-full opacity-0" style={{ 
+  return (
+    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-lg w-full opacity-0 glow-container" 
+      style={{ 
         animation: 'fadeIn 0.8s ease-out forwards',
         animationDelay: '0.3s'
-      }}>      <div className="flex flex-row items-start gap-8 hover:scale-[1.01] transition-transform duration-300">
-        <img 
-          src={import.meta.env.BASE_URL + 'profile-pic.jpg'} 
-          alt="Profile Picture" 
-          className="w-65 h-65 rounded-lg object-cover shadow-md"
-        />
-        <div className="flex-1">
+      }}>
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 hover:scale-[1.01] transition-transform duration-300">
+        <div className="w-32 h-32 sm:w-48 sm:h-48 md:w-65 md:h-65 flex-shrink-0">
+          <img 
+            src={import.meta.env.BASE_URL + 'profile-pic.jpg'} 
+            alt="Profile Picture" 
+            className="w-full h-full rounded-lg object-cover shadow-md"
+          />
+        </div>
+        <div className="flex-1 text-center sm:text-left w-full">
           <ProfileInfo />
-          <div className="mt-6">
-            <SocialLinks />            <button className="mt-6 px-8 py-2.5 bg-blue-900 hover:bg-blue-950 text-white text-base rounded-full shadow-sm cursor-pointer transform hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out hover:translate-y-[-2px]">
-              View Resume
-            </button>
+          <div className="mt-4 sm:mt-6 flex flex-col items-center sm:items-start">
+            <SocialLinks />
+            <a 
+              href="https://drive.google.com/file/d/1aQlbm7X-AdoY0sVHo7rGi4J699L-LZV2/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 sm:px-8 py-2 sm:py-2.5 bg-transparent border-2 border-slate-600 hover:border-blue-500 text-slate-600 group-hover:text-white text-sm sm:text-base rounded-full shadow-sm cursor-pointer transform hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300 ease-in-out relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out rounded-full"/>
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">View Resume</span>
+            </a>
           </div>
         </div>
       </div>
