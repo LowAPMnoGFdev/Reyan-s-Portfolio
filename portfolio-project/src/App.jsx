@@ -2,6 +2,8 @@ import './index.css'
 import Profile from './components/Profile'
 import Experience from './components/Experience'
 import AboutMe from './components/AboutMe'
+import Projects from './components/Projects'
+import TechStack from './components/TechStack'
 
 function App() {
   return (
@@ -9,13 +11,24 @@ function App() {
       <div className="container mx-auto max-w-[1200px] opacity-0" style={{
           animation: 'containerAppear 0.8s ease-out forwards'
         }}>
-        <div className="flex flex-col lg:flex-row gap-8 transition-all duration-500 ease-in-out">
-          <div className="flex flex-col space-y-8 lg:w-2/3">
-            <Profile />
-            <AboutMe />
+        <div className="flex flex-col space-y-8">
+          <div className="flex flex-col lg:flex-row gap-8 transition-all duration-500 ease-in-out">
+            <div className="flex flex-col space-y-8 lg:w-2/3">
+              <Profile />
+              <AboutMe />
+            </div>
+            <div className="lg:w-1/3">
+              <Experience />
+            </div>
           </div>
-          <div className="lg:w-1/3">
-            <Experience />
+          
+          <div className="flex flex-col lg:flex-row gap-8 transition-all duration-500 ease-in-out">
+            <div className="lg:w-1/2">
+              <Projects />
+            </div>
+            <div className="lg:w-1/2">
+              <TechStack />
+            </div>
           </div>
         </div>
       </div>
