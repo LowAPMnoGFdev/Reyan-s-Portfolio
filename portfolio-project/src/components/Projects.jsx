@@ -1,7 +1,7 @@
 import React from 'react'
 
 const techColors = {
-  'HTML/CSS': 'bg-gradient-to-r from-orange-500 to-blue-500 text-white',
+  'Html/Css': 'bg-gradient-to-r from-orange-500 to-blue-500 text-white',
   'JavaScript': 'bg-yellow-400 text-white',
   'Python': 'bg-blue-500 text-white',
   'Django': 'bg-green-600 text-white',
@@ -30,7 +30,7 @@ const Projects = () => {
           <h3 className="text-xl font-semibold text-gray-700">Payroll System</h3>
           <p className="text-gray-600 mt-2">A secure, efficient payroll solution designed to streamline salary processing, tax calculations, and employee record-keeping.</p>
           <div className="flex flex-wrap gap-2 mt-4">
-            {['HTML/CSS', 'JavaScript', 'Python', 'Django'].map((tech) => (
+            {['Html/Css', 'JavaScript', 'Python', 'Django'].map((tech) => (
               <span
                 key={tech}
                 className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 shadow-sm ${techColors[tech]}`}
@@ -44,9 +44,8 @@ const Projects = () => {
         {/* Second Project */}        <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 rounded-lg opacity-0 hover:shadow-2xl hover:bg-gradient-to-r hover:from-gray-100 hover:via-white hover:to-gray-100 transform hover:-translate-y-1 transition-all duration-300 glow-container" style={{
           animation: 'fadeIn 0.4s ease-out forwards',
           animationDelay: '1.4s'
-        }}>
-          <h3 className="text-xl font-semibold text-gray-700">3 in 1 System for International organization</h3>
-          <p className="text-gray-600 mt-2"></p>
+        }}>          <h3 className="text-xl font-semibold text-gray-700">3 in 1 System for International organization</h3>
+          <p className="text-gray-600 mt-2">A comprehensive web platform featuring three integrated modules: Member Management for profile tracking and role-based access control, Learning Management System for course creation and progress monitoring, and Finance Auditing for transparent financial record-keeping and reporting.</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {['Laravel', 'React', 'Tailwind', 'Firebase'].map((tech) => (
               <span

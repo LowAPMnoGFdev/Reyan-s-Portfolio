@@ -1,9 +1,13 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "First Web Developer Experience",
-      period: "Aug 2023",
-      description: "Introductory of my coding journey with basic bootstrap and php."
+      title: "Django Project",
+      period: "Dec 2024 - Jun 2025",
+      description: "Built a comprehensive full-stack payroll system handling employee management, attendance tracking, and automated salary calculations using Django and PostgreSQL"
+    },
+    {      title: "Freelance Web Developer",
+      period: "Dec 2024 - Jun 2025",
+      description: "3 in 1 system for an international organization."
     },
     {
       title: "First JavaScript project",
@@ -11,14 +15,9 @@ const Experience = () => {
       description: "Scheduling system for mobile development with Flutter framework."
     },
     {
-      title: "Freelance Web Developer",
-      period: "Dec 2024 - Jun 2025",
-      description: "3 in 1 system for an international organization."
-    },
-    {
-      title: "Django Project",
-      period: "Dec 2024 - Jun 2025",
-      description: "Full stack for payroll system administration side"
+      title: "First Web Developer Experience",
+      period: "Aug 2023",
+      description: "Introductory of my coding journey with basic bootstrap and php."
     },
   ]
 
