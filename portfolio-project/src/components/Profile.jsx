@@ -81,7 +81,7 @@ const SocialLinks = () => {
       )
     },
     {
-      href: "mailto:your.email@example.com",
+      href: "https://drive.google.com/file/d/1Xq9k20HUxzhA7LN4h2O6UZoxzIpOYMAW/view?usp=sharing",
       icon: (
         <path fillRule="evenodd" d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 001.228 0L20 9.044 20.002 18H4z" clipRule="evenodd" />
       )
@@ -94,20 +94,15 @@ const SocialLinks = () => {
         {socialLinks.map((link, index) => (
           <a 
             key={index}
-            href={link.href}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-transparent border-2 border-slate-600 hover:border-blue-500 opacity-0 transform hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] relative overflow-hidden group transition-all duration-300" 
+            href={link.href}            className="w-10 h-10 flex items-center justify-center rounded-full bg-clip-padding bg-[#0a192f] hover:bg-violet-600 [transition:background-color_0.5s_steps(20)] border-2 border-slate-600 hover:border-violet-500 relative overflow-hidden group hover:shadow-[0_0_20px_rgba(139,92,246,0.7)] social-link social-icon"
             style={{
-              animation: 'fadeIn 0.5s ease-out forwards',
-              animationDelay: `${0.8 + index * 0.1}s`,
+              animationDelay: `${index * 200}ms`
             }}
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out rounded-full"/>
             <svg
-              className="w-5 h-5 text-slate-600 group-hover:text-white transition-colors duration-300 relative z-10" 
+              className="w-5 h-5 text-gray-300 group-hover:text-white group-hover:filter group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300 relative z-10"
               fill="currentColor"
-              viewBox="0 0 24 24" 
+              viewBox="0 0 24 24"
               aria-hidden="true"
             >
               {link.icon}
@@ -120,13 +115,8 @@ const SocialLinks = () => {
 }
 
 const Profile = () => {
-  return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-lg w-full opacity-0 glow-container" 
-      style={{ 
-        animation: 'fadeIn 0.8s ease-out forwards',
-        animationDelay: '0.3s'
-      }}>
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 hover:scale-[1.01] transition-transform duration-300">
+  return (    <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-lg w-full glow-container profile-container">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 profile-content">
         <div className="w-32 h-32 sm:w-48 sm:h-48 md:w-65 md:h-65 flex-shrink-0">
           <img 
             src={import.meta.env.BASE_URL + 'profile-pic.jpg'} 
@@ -141,11 +131,9 @@ const Profile = () => {
             <a 
               href="https://drive.google.com/file/d/1aQlbm7X-AdoY0sVHo7rGi4J699L-LZV2/view?usp=sharing"
               target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 sm:px-8 py-2 sm:py-2.5 bg-transparent border-2 border-slate-600 hover:border-blue-500 text-slate-600 group-hover:text-white text-sm sm:text-base rounded-full shadow-sm cursor-pointer transform hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300 ease-in-out relative overflow-hidden group"
+              rel="noopener noreferrer"              className="px-6 sm:px-8 py-2 sm:py-2.5 bg-clip-padding bg-[#0a192f] hover:bg-violet-600 [transition:background-color_0.5s_steps(20)] border-2 border-slate-600 hover:border-violet-500 text-gray-300 text-sm sm:text-base rounded-full shadow-sm cursor-pointer relative overflow-hidden group hover:shadow-[0_0_20px_rgba(139,92,246,0.7)] resume-button"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out rounded-full"/>
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">View Resume</span>
+              <span className="relative z-10 group-hover:text-white group-hover:filter group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">View Resume</span>
             </a>
           </div>
         </div>

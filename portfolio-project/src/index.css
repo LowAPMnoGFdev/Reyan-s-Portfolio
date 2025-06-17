@@ -106,11 +106,11 @@ html {
 
 /* New animation keyframes */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -203,6 +203,153 @@ html {
     background-position: 0% 50%;
 
   }
+}
+
+/* Purple glow overlay effect */
+.group:hover .absolute {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.1) 25%,
+    rgba(139, 92, 246, 0.2) 50%,
+    rgba(139, 92, 246, 0.1) 75%,
+    transparent 100%
+  );
+  mix-blend-mode: overlay;
+  filter: blur(4px);
+}
+
+@keyframes purpleGlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%) scale(1);
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0%) scale(1.1);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) scale(1);
+    filter: blur(4px);
+  }
+}
+
+.group:hover .absolute {
+  animation: purpleGlow 2s ease-in-out infinite;
+}
+
+/* Enhanced glow effect */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  mix-blend-mode: overlay;
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Simple left-to-right violet glow effect */
+.group .absolute {
+  transition: transform 0.5s ease-out;
+  backdrop-filter: blur(4px);
+  mix-blend-mode: screen;
+}
+
+.group:hover .absolute {
+  transform: translateX(0);
+  background-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Custom violet glow */
+.violet-glow {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.group:hover .violet-glow {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+}
+
+@layer utilities {
+  @keyframes purpleGlow {
+    0% {
+      opacity: 0;
+      transform: translateX(-200%) scale(1);
+      filter: blur(4px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(0%) scale(1.1);
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(200%) scale(1);
+      filter: blur(4px);
+    }
+  }
+
+  .animate-purpleGlow {
+    animation: purpleGlow 2s ease-in-out infinite;
+  }
+}
+
+/* Profile component animations */
+.social-link {
+  opacity: 0;
+  transform: scale(1);
+  background-image: linear-gradient(to right, rgb(0, 190, 159) 50%, #0a192f 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+}
+
+.social-link:hover {
+  background-position: left bottom;
+  box-shadow: 0 0 20px rgba(152, 142, 175, 0.7), inset 0 0 10px rgba(255,255,255,0.3);
+  transform: scale(1.1);
+}
+
+.resume-button {
+  background-image: linear-gradient(to right, rgb(70, 0, 184) 50%, #0a192f 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+}
+
+.resume-button:hover {
+  background-position: left bottom;
+  box-shadow: 0 0 20px rgba(139,92,246,0.7), inset 0 0 10px rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+.profile-container {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.profile-content:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s;
+}
+
+.social-icon {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* You can keep other styles or components as per your design */

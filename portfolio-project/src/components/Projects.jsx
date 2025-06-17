@@ -4,7 +4,11 @@ const techColors = {
   'HTML/CSS': 'bg-gradient-to-r from-orange-500 to-blue-500 text-white',
   'JavaScript': 'bg-yellow-400 text-white',
   'Python': 'bg-blue-500 text-white',
-  'Django': 'bg-green-600 text-white'
+  'Django': 'bg-green-600 text-white',
+  'Tailwind': 'bg-cyan-400 text-white',
+  'React': 'bg-blue-400 text-white',
+  'Firebase': 'bg-yellow-500 text-white',
+  'Laravel': 'bg-red-600 text-white',
 };
 
 const Projects = () => {
@@ -42,9 +46,9 @@ const Projects = () => {
           animationDelay: '1.4s'
         }}>
           <h3 className="text-xl font-semibold text-gray-700">3 in 1 System for International organization</h3>
-          <p className="text-gray-600 mt-2">A secure, efficient payroll solution designed to streamline salary processing, tax calculations, and employee record-keeping.</p>
+          <p className="text-gray-600 mt-2"></p>
           <div className="flex flex-wrap gap-2 mt-4">
-            {['HTML/CSS', 'JavaScript', 'Python', 'Django'].map((tech) => (
+            {['Laravel', 'React', 'Tailwind', 'Firebase'].map((tech) => (
               <span
                 key={tech}
                 className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 shadow-sm ${techColors[tech]}`}

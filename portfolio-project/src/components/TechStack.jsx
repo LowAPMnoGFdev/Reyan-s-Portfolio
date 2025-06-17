@@ -11,6 +11,8 @@ const techColors = {
   // Backend
   PHP: 'bg-indigo-600 text-white',
   DJANGO: 'bg-green-600 text-white',
+  LARAVEL: 'bg-red-600 text-white',
+  FLUTTER: 'bg-blue-400 text-white',
   
   // Database
   MYSQL: 'bg-blue-700 text-white',
@@ -56,7 +58,7 @@ const TechStack = () => {
         }}>
           <h3 className="text-xl font-semibold text-gray-700 mb-2">Backend</h3>
           <div className="flex flex-wrap gap-2">
-            {['PHP', 'DJANGO'].map((tech) => (
+            {['PHP', 'DJANGO', 'LARAVEL', 'FLUTTER'].map((tech) => (
               <span
                 key={tech}
                 className={`px-3 py-1 text-sm rounded-full transition-transform hover:scale-105 ${techColors[tech]}`}
